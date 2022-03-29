@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myappli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myappli
+  template:
+    metadata:
+      labels:
+        app: myappli
+    spec:
+      containers:
+      - name: myapp
+        image: pavneetkaur15/capstone:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9090
